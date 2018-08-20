@@ -1,0 +1,13 @@
+<view class="containerAll">
+  <!-- 输入手机号码 -->
+  <input class="cellView phoneText" type='number' placeholder-style="color:#ccc" placeholder="请输入手机号码" bindinput="phoneInput" />
+
+  <!-- 获取验证码 -->
+  <view class='cellView CAPTCHAView'>
+    <input class="CAPTCHAText" type='number' placeholder-style="color:#ccc" placeholder="请输入验证码" bindinput="CAPTCHAInput" />
+    <button class=' CAPTCHABtn' disabled='{{yzmDisabled}}' catchtap="getYzmClk">{{yzm}}</button>
+  </view>
+
+  <button class='cellView nextBtn' bindtap='nextClk'>下一步</button>
+
+</view>

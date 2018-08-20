@@ -1,0 +1,221 @@
+/* 圆形进度条 */
+
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  font-size: 16px;
+  color: white;
+  background-color: #152642;
+}
+
+.airViewA {
+  width: 100%;
+  height: 4%;
+  font-size: 12px;
+  display: flex;
+}
+
+.location {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.updatatime {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.airViewA image {
+  width: 20%;
+  height: 70%;
+}
+
+.airViewB {
+  width: 100%;
+  height: 30%;
+  display: flex;
+}
+
+.circleView {
+  width: 60%;
+  height: 100%;
+  position: relative;
+}
+
+.circle {
+  display: inline-block;
+  border-radius: 100%;
+}
+
+.circletextView {
+  width: 100%;
+  height: 50%;
+  font-size: 50px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.aiqimageView {
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aiqimageView image {
+  width: 10%;
+  height: 100%;
+}
+
+.aiqimageView text {
+  height: 100%;
+  font-size: 14px;
+}
+
+.weatherView {
+  width: 40%;
+  height: 100%;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.weatherView text {
+  margin-left: 30rpx;
+}
+
+.temp {
+  font-size: 20px;
+}
+
+.weatherView button {
+  width: 80%;
+  margin-top: 30rpx;
+  font-size: 14px;
+  color: white;
+  background-color: #1a3e79;
+}
+
+.airViewC {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.airViewC .airOptionsView {
+  width: 30%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.airViewC .airOptionsView .title {
+  font-size: 12px;
+}
+
+.airViewC .airOptionsView .value {
+  font-size: 18px;
+}
+
+.airViewC .airOptionsView progress {
+  width: 80%;
+  height: 20%;
+}
+
+.airViewD {
+  width: 95%;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.airViewD .title {
+  width: 100%;
+  height: 40%;
+}
+
+.airViewD .value {
+  width: 100%;
+  height: 60%;
+  font-size: 12px;
+  word-break: break-all;
+}
+
+.airViewE {
+  width: 100%;
+  height: 30%;
+  border-top: 2rpx solid #f5f5f5;
+  display: flex;
+  justify-content: space-around;
+}
+
+.airForecastView {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.airForecastView image {
+  width: 20%;
+  height: 10%;
+}
+
+
+.AQIspecification {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: white;
+  opacity: 1;
+  overflow: hidden;
+  z-index: 9000;
+}
+.AQIspecification image{
+  width: 100%;
+  height: 100%;
+}
+
+.authorizationView {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 9000;
+}
+.authorizationView text{
+  font-size: 16px;
+  margin: 100rpx 30rpx;
+
+}
+.authorizationView button {
+  width: 60%;
+  color: white;
+  background-color: #068de7;
+}

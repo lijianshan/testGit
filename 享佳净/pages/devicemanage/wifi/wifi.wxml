@@ -1,0 +1,47 @@
+<view class='containerAll'>
+  <view class='cutView'>
+  </view>
+
+  <view class='cellView'>
+    <text>需要设置的Wi-Fi网络：</text>
+    <button bindtap='wifiListClk'>WI-FI列表选择</button>
+  </view>
+
+  <input class="cellView input" type='text' placeholder-style="color:#ccc" placeholder="请输入需要设置的Wi-Fi网络名称" bindinput="wifinameInput" value="{{connectWifiName}}" />
+
+  <view class='cutView'>
+  </view>
+
+  <view class='cellView'>
+    <text>WI-FI密码：</text>
+  </view>
+
+  <input class="cellView input" type='text' placeholder-style="color:#ccc" placeholder="请输入Wi-Fi密码" bindinput="passwordInput" />
+
+  <input class="cellView input" type='text' placeholder-style="color:#ccc" placeholder="请再次输入Wi-Fi的密码" bindinput="passwordAgainInput" />
+
+  <button class='cellView setBtn' bindtap='setClk'>设置WI-FI</button>
+
+  <text class='cellView warning'>WI-FI修改成功后设备会重启，请等待设备重新上线后再使用(大约30S)</text>
+
+</view>
+
+<!-- wifi列表选择 -->
+<view wx:if="{{wifiListViewShow==true}}">
+  <view class='wifiListMask'></view>
+  <view class='wifiList'>
+    <text class='cell title'>可用的网络</text>
+    <scroll-view scroll-y="true">
+      <view wx:for="{{wifiListItems}}" wx:key="navItems" class='cell' bindtap='wifiViewChangeClk' data-id='{{index}}'>
+        <image src="../../../images/WIFI.png" mode='aspectFit'></image>
+        <text>{{item.SSID}}</text>
+      </view>
+    </scroll-view>
+    <button class='cancelBtn' bindtap='wifiViewCancelClk'>取消</button>
+  </view>
+</view>
+
+<!-- 设备版本过低，无法设置WIFI -->
+<view wx:if="{{versionsViewShow==true}}" class='versionsView'>
+  <text>当前设备的软件版本过低({{softwareVersion}})\n无法设置WI-FI。请联系厂家升级设备软件或是重新对码添加修改WI-FI</text>
+</view>

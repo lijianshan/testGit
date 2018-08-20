@@ -1,0 +1,27 @@
+<view class='containerAll'>
+
+  <!-- <view class='dividingLine'></view> -->
+  <view class='container'>
+
+    <text class='title'>设备SN码说明:</text>
+    <text>用于查看新风主机生产信息以及滤芯型号等的字符串二维码信息</text>
+
+    <view class='dividingLine'></view>
+
+    <text class='title'>当前SN码信息(只显示第一个):</text>
+    <block wx:for="{{SNcodes}}" wx:key='key'>
+      <view class='sncell'>
+        <text>{{item.devSn}}</text>
+        <button class='modifyBtn' bindtap='modifyBtnClk' id="{{index}}">修改</button>
+      </view>
+    </block>
+
+    <view class='dividingLine'></view>
+
+    <text class='title'>增加SN码信息:</text>
+    <text>当有多个新风主机并网到同一个控制器时，则每个新风主机的SN码均要添加</text>
+    <button class='addBtn' bindtap='addBtnClk'>添加</button>
+    
+  </view>
+
+</view>

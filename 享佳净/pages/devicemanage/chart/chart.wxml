@@ -1,0 +1,38 @@
+<view class='containerAll'>
+
+  <view class="swiper-tab">
+    <block wx:for="{{swipertab}}" wx:key="sptab">
+      <view class="swiper-tab-list {{currtab==index?'on':''}}" data-current="{{index}}" bindtap="tabSwitch">{{item}}</view>
+    </block>
+  </view>
+
+  <view class="title">
+    <text>{{swipertab[currtab]}}月统计</text>
+  </view>
+
+  <view class='statisticalchart' id='chartStyleView'>
+    <canvas hidden='{{currtab==0?false:true}}' canvas-id="pm25PieGraph"></canvas>
+    <view hidden='{{currtab==1?false:true}}' class='co2MonthView'>
+      <block wx:for="{{co2MonthTitle}}" wx:key="navItems">
+        <view class='co2Cell'>
+          <text class='co2title'>{{co2MonthTitle[index]}}</text>
+          <text class='co2value'>{{co2Month[index]}}</text>
+        </view>
+      </block>
+    </view>
+    <canvas hidden='{{currtab==2?false:true}}' canvas-id="gradePieGraph"></canvas>
+  </view>
+  <view class="title">
+    <text>{{swipertab[currtab]}}周走势</text>
+  </view>
+
+  <view class='runchart'>
+    <canvas hidden='{{currtab==0?false:true}}' canvas-id="pm25AreaGraph"></canvas>
+    <canvas hidden='{{currtab==1?false:true}}' canvas-id="co2AreaGraph"></canvas>
+    <canvas hidden='{{currtab==2?false:true}}' canvas-id="gradeBarGraph"></canvas>
+  </view>
+
+</view>
+
+
+<!-- wx.animation() -->

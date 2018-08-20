@@ -1,0 +1,11 @@
+<view class='containerAll'>
+  <text class='title'>扫码添加设备流程</text>
+  <view class='textview'>
+    <text>先通过要添加设备的管理员获取到设备的二维码</text>
+    <image class="iconnext" src="../../images/next.png" mode='aspectFit'></image>
+    <text>点击下面的扫码按键，直接扫码或是通过相册扫码完成设备的添加</text>
+    <image class="iconnext" src="../../images/next.png" mode='aspectFit'></image>
+    <text>设备添加成功后跳转到设备列表界面</text>
+  </view>
+  <button class='scancodeBtn' bindtap='scancodeClk'>扫码添加</button>
+</view>

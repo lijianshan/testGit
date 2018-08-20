@@ -1,0 +1,25 @@
+<scroll-view scroll-y="true" class='containerAll'>
+
+  <block wx:if="{{on_off=='on'&& deviceInfo.user!=2}}" wx:for="{{devicemanageItem1}}" wx:key="navItems">
+    <view class='cell' bindtap='devicemanageList1Clk' id="{{index+1}}">
+      <text class='title'>{{item}}</text>
+      <picker wx:if="{{index==1}}" range="{{tempPickerArry}}" value="{{tempPickerIndex}}" bindchange='changeTempClk'>
+        {{tempPickerArry[tempPickerIndex]}}
+      </picker>
+      <switch wx:if="{{index==3}}" checked="{{cleanEnble}}" bindchange="CleanClk" />
+      <text wx:else class='iconRight'>></text>
+    </view>
+  </block>
+
+  <view wx:if="{{on_off=='on' && deviceInfo.user!=2}}" class='cell line'></view>
+
+  <block wx:for="{{devicemanageItem2}}" wx:key="navItems">
+    <view wx:if="{{((deviceInfo.user==1||deviceInfo.user==2)&&index<2)||deviceInfo.user==0}}" class='cell' bindtap='devicemanageList2Clk' id="{{index+1}}">
+      <text class='title'>{{item}}</text>
+      <text class='iconRight'>></text>
+    </view>
+  </block>
+
+  <button class='removeDeviceBtn' type='warn' bindtap='removeDeviceClk'>删除设备</button>
+
+</scroll-view>

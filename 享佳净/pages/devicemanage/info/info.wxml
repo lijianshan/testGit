@@ -1,0 +1,21 @@
+<view class='containerAll'>
+
+  <showInputModel id='modifyDeviceNameModel' title='修改设备名称' inputText='{{deviceInfo.name}}' bindCancel="modifyDeviceNameCancel" bindSure="modifyDeviceNameSure">
+  </showInputModel>
+
+  <view class='nameView'>
+    <text>{{deviceInfo.name}}</text>
+    <view bindtap='modifyNameClk'>编辑</view>
+  </view>
+
+  <view class='line'></view>
+
+  <block wx:for="{{infoItem_title}}" wx:key="navItems">
+    <view class='cell'>
+      <text class='title'>{{item}}</text>
+      <text class='value'>{{infoItem_value[index]}}</text>
+    </view>
+    <view class='line'></view>
+  </block>
+
+</view>

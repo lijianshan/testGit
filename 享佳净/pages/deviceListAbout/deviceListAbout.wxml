@@ -1,0 +1,19 @@
+<scroll-view scroll-y="true" class='containerAll'>
+
+  <view class='header'>
+    <text class='headertitle'>图标说明</text>
+  </view>
+
+  <!-- 当前账户 -->
+  <view wx:for="{{iconShowsList}}" wx:key="navItems" class="cell">
+    <image src="{{item.imageurl}}" class='images' mode='aspectFit' />
+    <text class='title'>{{item.title}}</text>
+  </view>
+
+  <view class='header'>
+    <text class='headertitle'>操作说明</text>
+  </view>
+  <view class='cell handing'>
+  对应设备的界面左滑可以选择进入设备管理
+  </view>
+</scroll-view>

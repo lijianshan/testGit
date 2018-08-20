@@ -1,0 +1,64 @@
+<view class='containerAll container'>
+  <view class='airViewA'>
+    <view class='location'>
+      <image class="" src="../../images/site.png" mode='aspectFit'></image>
+      <text>{{airData.province}} {{airData.city}}</text>
+    </view>
+    <view class='updatatime'>
+      <image src="../../images/timer.png" mode='aspectFit'></image>
+      <text>{{updataTime}}</text>
+    </view>
+  </view>
+
+  <view class='airViewB'>
+
+    <view class="circleView" id='circleView'>
+      <canvas wx:if="{{AQIspecificationShow==false}}"  class="circle" style='width:{{circleViewWidth}}px;height:{{circleViewWidth}}px;margin-left:{{(circleViewWw-circleViewWidth)/2}}px' canvas-id="canvasArc"></canvas>
+      <view class="circletextView" style='top:{{circleViewWidth/2-45}}px'>
+        <text>{{airWeeks[1].value}}</text>
+        <view class='aiqimageView'>
+          <image src="{{airWeeks[1].imageUrl}}" mode='aspectFit'></image>
+          <text>{{airWeeks[1].title}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='weatherView'>
+      <text class='temp'>{{airData.temp}}°C</text>
+      <text class=''>● 体感{{airData.realFeel}}°C</text>
+      <text class=''>● {{airData.condit}}</text>
+      <text class=''>● {{airData.windDir}} {{airData.windLevel}}级</text>
+      <text class=''>● 湿度{{airData.humidity}}%</text>
+      <button bindtap='AQIspecificationClk'>AQI说明</button>
+    </view>
+  </view>
+  <view class='airViewC'>
+    <block wx:for="{{airOptions}}" wx:key="navItems">
+      <view class='airOptionsView'>
+        <text class='title'>{{item.name}}</text>
+        <text class='value'>{{item.value}}</text>
+        <!-- #20bbf7 -->
+        <progress percent="{{item.value*100/500}}" activeColor="#f70404" backgroundColor='#d2d2d2' stroke-width="3" />
+      </view>
+    </block>
+  </view>
+  <view class='airViewD'>
+    <text class='title'>健康提示:</text>
+    <text class='value'>{{airWeeks[1].tips}}</text>
+  </view>
+
+  <view class='airViewE'>
+    <block wx:for="{{airWeeks}}" wx:key="navItems">
+      <view class='airForecastView'>
+        <text>{{item.weekday}}</text>
+        <image src="{{item.imageUrl}}" mode='aspectFit'></image>
+        <text>{{item.title}}</text>
+        <text>{{item.day}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+
+<!-- 浮动 specification -->
+<view wx:if="{{AQIspecificationShow==true}}" class="containerAll AQIspecification" bindtap="AQIspecificationClk">
+  <image src="../../images/AQIspecification.jpg" mode='aspectFit'></image>
+</view>

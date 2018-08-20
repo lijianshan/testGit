@@ -1,0 +1,21 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.containerAll {
+  position: static;
+}
+
+image {
+  margin: 60rpx;
+  width: 500rpx;
+  height: 500rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.tetxView {
+  margin-top: 60rpx;
+  text-align: left;
+  display: block;
+}

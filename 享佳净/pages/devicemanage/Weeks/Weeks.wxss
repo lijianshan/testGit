@@ -1,0 +1,78 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.weekdayView {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weekday {
+  width: 12%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.on {
+  border-bottom: 10rpx solid #eea231;
+}
+
+.centerDisplay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  width: 100%;
+  height: 8%;
+  background-color: #8bbfde;
+  display: flex;
+}
+
+.title_state {
+  width: 20%;
+  height: 100%;
+}
+
+.title_time {
+  width: 20%;
+  height: 100%;
+}
+
+.title_fanspeed {
+  width: 60%;
+  height: 100%;
+}
+
+.cell {
+  width: 100%;
+  height: 120rpx;
+  font-size: 18px;
+  border-bottom: 2rpx solid #f0f0f0;
+  background-color: #fdfdfd;
+  display: flex;
+  align-items: center;
+}
+switch{
+  width: 20%;
+}
+picker{
+  width:20%;
+}
+slider{
+  width: 50%;
+}
+
+.saveBtn {
+  width: 90%;
+  color: white;
+  background-color: #068de7;
+  margin-top: 60rpx;
+}

@@ -1,0 +1,12 @@
+<view wx:if="{{isShow}}" class="modal-mask" bindtap="_cancelEvent">
+</view>
+<view class="modal-dialog" wx:if="{{isShow}}">
+  <view class="modal-title">{{title}}</view>
+  <view class="modal-content">
+    <input placeholder-class="input-holder" placeholder="{{placeholder}}" value='{{inputText}}' bindinput="_inputChange" class="input"></input>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="_cancelEvent">{{cancelButtonText}}</view>
+    <view class="btn-confirm" bindtap="_sureEvent">{{sureButtonText}}</view>
+  </view>
+</view>

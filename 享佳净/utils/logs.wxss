@@ -1,0 +1,47 @@
+/* 
+  flex容器属性详解:
+  flex-direction: 决定元素的排列方向
+      row:横排
+      column:竖排
+  flex-wrap:决定元素如何换行（排列不下时）
+      nowrap:不换行
+      wrap:换行
+  justify-content:元素在主轴上的对齐方式
+      flex-start:从左边开始对齐
+      flex-end:从右边开始对齐
+      space-around:元素间隔相等
+      space-between:两端对齐，中间间隔一样
+      center:居中对齐
+  align-items:元素在交叉轴上的对齐方式
+      flex-start:从上边开始对齐
+      flex-end:从下边开始对齐
+      center:居中对齐
+
+
+  flex元素属性详解:
+  flex-grow:当容器有多余空间的时候，多余空间元素分配比例 
+      默认为0，不分配
+  flex-shrink:当容器空间的不足时候，元素当缩小比例
+      默认为1，等比缩小
+  flex-basis:元素在主轴上占据的空间 
+      单位为rpx
+  order:定义元素排列顺序
+      值为1 2 3等数字，数字相同，按顺序
+  align-self:定义元素自身的对齐方式
+      覆盖align-items，个性化
+
+
+  相对定位：
+  相对定位的元素是相对自身进行定位，参照物是自己
+  position:relative
+  left:
+  right:
+  top:
+
+  绝对定位：
+  绝对定位的元素是相对离他最近的一个已定位的父级元素进行定位
+  position:absolute
+  left:
+  right:
+  top: 
+  */

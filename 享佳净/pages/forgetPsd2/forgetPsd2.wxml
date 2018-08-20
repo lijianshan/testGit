@@ -1,0 +1,10 @@
+<view class="containerAll">
+  <!-- 输入需要修改的密码 -->
+  <input class="cellView input" type='text' placeholder-style="color:#ccc" placeholder="请输入修改的密码(6-20个字符)" bindinput="passwordInput" />
+
+  <!-- 再次输入需要修改的密码 -->
+  <input class="cellView input" type='text' placeholder-style="color:#ccc" placeholder="请再次输入修改的密码" bindinput="passwordAgainInput" />
+
+  <button class='cellView finishBtn' bindtap='finishClk'>完成</button>
+
+</view>

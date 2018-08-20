@@ -1,0 +1,35 @@
+<view class='containerAll'>
+
+  <!-- 姓名 -->
+  <input class="cellView border" type='text' placeholder-style="color:#ccc" placeholder="请填写姓名(2-20个字符)" bindinput="nameInput" />
+
+  <!-- 输入手机号码 -->
+  <input class="cellView border" type='number' placeholder-style="color:#ccc" placeholder="请填写手机号码" bindinput="phoneInput" />
+
+  <!-- 密码 -->
+  <input class="cellView border" type='text' placeholder-style="color:#ccc" placeholder="请填写密码(6-20个字符)" bindinput="passwordInput" />
+
+  <!-- 邮箱 -->
+  <input class="cellView border" type='text' placeholder-style="color:#ccc" placeholder="请填写邮箱" bindinput="emailInput" />
+
+  <!-- 选择省市 -->
+  <view class='cellView border'>
+    <text>请选择省市:</text>
+    <picker bindchange="changeRegin" mode="region" value="{{region}}">
+      <view>{{region[0]}} {{region[1]}} </view>
+    </picker>
+  </view>
+
+  <!-- 详细地址 -->
+  <input class="cellView border" type='text' placeholder-style="color:#ccc" placeholder="请填写详细地址" bindinput="addressDetailsInput" />
+
+  <!-- 获取验证码 -->
+  <view class='cellView'>
+    <input class="CAPTCHAText border" type='number' placeholder-style="color:#ccc" placeholder="请输入验证码" bindinput="CAPTCHAInput" />
+    <button class=' CAPTCHABtn' disabled='{{yzmDisabled}}' catchtap="getYzmClk">{{yzm}}</button>
+  </view>
+
+  <!-- 注册 -->
+  <button class='cellView registerBtn' bindtap='registerClk'>注册</button>
+
+</view>

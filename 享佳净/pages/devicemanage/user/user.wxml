@@ -1,0 +1,16 @@
+<scroll-view scroll-y="true" class='containerAll'>
+
+  <view class='title'> 管理员</view>
+  <view class='cell'>
+    <text class='user'>{{loginName}}</text>
+    <text class='iconRight'>本机</text>
+  </view>
+  
+  <view class='title'>普通用户</view>
+  <block wx:for="{{NormalUserItems}}" wx:key="navItems">
+    <view class='cell'>
+      <text class='user'>{{item.loginName}}</text>
+    </view>
+  </block>
+
+</scroll-view>

@@ -1,0 +1,32 @@
+<view class="containerAll">
+  <view class="login-icon">
+    <image class="login-img" src="../../images/login_bg.png"></image>
+  </view>
+
+  <view class="login-from">
+
+    <!--账号-->
+    <view class="inputView">
+      <image class="nameImage" src="../../images/user.png" mode='aspectFit'></image>
+      <label class="loginLab">账号</label>
+      <input class="inputText" placeholder-style="color:#ccc" placeholder="请输入账号" bindinput="phoneInput" type='number' value ="{{phone}}"/>
+    </view>
+
+    <!--密码-->
+    <view class="inputView">
+      <image class="keyImage" src="../../images/password.png" mode='aspectFit'></image>
+      <label class="loginLab">密码</label>
+      <input password="true" placeholder-style="color:#ccc" placeholder="请输入密码" bindinput="passwordInput" />
+    </view>
+
+    <!--忘记密码 注册-->
+    <view class='forgetregisterView'>
+      <text class="forgetPsd"  bindtap="forgetPsdClk">忘记密码?</text>
+      <text class="register"   bindtap="registerClk">注册</text>
+    </view>
+    <!--按钮-->
+    <button class="loginBtn"  bindtap="loginClk">登录</button>
+
+  </view>
+
+</view>

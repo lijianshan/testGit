@@ -1,0 +1,124 @@
+<view class='containerAll container'>
+
+  <view class='toplevel'>
+    <view class="deviceset"></view>
+    <view>
+      <text class='devicename'>{{deviceInfo.name}}</text>
+    </view>
+    <image src="../../images/deviceSetMain.png" mode='aspectFit' class="deviceset" bindtap='deviceManageClk' />
+  </view>
+
+  <view class='centerlevel'>
+    <view class='roomoutairparameter'>
+      <text>{{outDoorAirData.city}} {{outDoorAirData.temp}}°C/{{outDoorAirData.humidity}}% {{outDoorAirData.condit}}\nPM2.5指数: {{outDoorAirData.pm25}}
+      </text>
+    </view>
+    <view class='pm25show'>
+      <button class='outdoorAirButton' bindtap='outdoorAirClk'>设备室外空气详情</button>
+      <text class='pm25showtext'>室内PM2.5</text>
+      <text style='font-size: 55px'>    
+      <text wx:if="{{roomAirStateInfo.pm25>65533}}">—</text>
+      <text wx:else>{{roomAirStateInfo.pm25}}</text>
+      </text>
+      <text class='pm25showtext'>{{airTitle[roomAirStateInfo.air-1]}}</text>
+    </view>
+  </view>
+
+  <view class='servicelifelevel'>
+    <view class='servicecondition'>
+      <text class='serviceconditiontkey'> 使用情况: </text>
+      <progress class='serviceconditionvalue' percent="{{roomControlInfo.devicelife_used*100/roomControlInfo.devicelife_all}}" activeColor="red" backgroundColor='green' stroke-width="8" />
+    </view>
+    <view class='servicecondition'>
+      <view class='serviceconditiontkey'>
+        <text> 滤网剩余: </text>
+      </view>
+      <view class='serviceconditionvalue'>
+        <text>{{roomControlInfo.devicelife_all-roomControlInfo.devicelife_used}}天</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='romstatelevel'>
+    <view class='roomstate borderright'>
+      <image src="../../images/temperature.png" class="roomstateimage" mode='aspectFit' />
+    </view>
+    <view class='roomstate borderright'>
+      <image src="../../images/humidity.png" class="roomstateimage" mode='aspectFit' />
+    </view>
+    <view class='roomstate borderright'>
+      <image src="../../images/co2.png" class="roomstateimage" mode='aspectFit' />
+    </view>
+    <view class='roomstate'>
+      <image src="../../images/tvoc.png" class="roomstateimage" mode='aspectFit' />
+    </view>
+    <view class='roomstate borderright'>
+      <text wx:if="{{roomAirStateInfo.temp>253}}">—</text>
+      <text wx:else>{{roomAirStateInfo.temp}}°C</text>
+    </view>
+    <view class='roomstate borderright'>
+      <text wx:if="{{roomAirStateInfo.humidity>253}}">—</text>
+      <text wx:else>{{roomAirStateInfo.humidity}}%</text>
+    </view>
+    <view class='roomstate borderright'>
+      <text wx:if="{{roomAirStateInfo.co2>65533}}">—</text>
+      <text wx:else>{{roomAirStateInfo.co2}}PPM</text>
+    </view>
+    <view class='roomstate'>
+      <text wx:if="{{roomAirStateInfo.tvoc>253}}">—</text>
+      <text wx:else>{{roomAirStateInfo.tvoc}}PPM</text>
+    </view>
+  </view>
+
+  <view class='devicecontrollevelA'>
+    <view class='devicecontrolA1'>
+      <text class='devicecontrol_text'>模式 </text>
+      <view class='dcA1_modeswitchimages'>
+        <block wx:for="{{runmodeimages}}" wx:key="navItems">
+          <image src="{{(roomControlInfo.runmode-1)==index?item[1]:item[0]}}" class="dcA1_modeswitchimage" mode='aspectFit' bindtap='runModeClk' data-id="{{index}}" />
+        </block>
+      </view>
+    </view>
+    <view class='devicecontrolA1'>
+      <text class='devicecontrol_text'>开关 </text>
+      <view class='dcA1_modeswitchimages'>
+        <image src="{{smartswitchimages[0][roomControlInfo.smartswitch1]}}" class="dcA1_modeswitchimage" mode='aspectFit' bindtap='smartSwitch1CLk' />
+        <image src="{{smartswitchimages[1][roomControlInfo.smartswitch2]}}" class="dcA1_modeswitchimage" mode='aspectFit' bindtap='smartSwitch2CLk' />
+        <image src="{{smartswitchimages[2][roomControlInfo.smartswitch3]}}" class="dcA1_modeswitchimage" mode='aspectFit' bindtap='smartSwitch3CLk' />
+        <image class="dcA1_modeswitchimage" />
+      </view>
+    </view>
+    <view class='devicecontrolA2'>
+      <text class='devicecontrol_text'>循环 </text>
+      <view class='dcA2_loopimages'>
+        <block wx:for="{{loopmodeimages}}" wx:key="navItems">
+          <image src="{{(roomControlInfo.loopmode-1)==index?item[1]:item[0]}}" mode='aspectFit' class="dcA2_loopimage" bindtap='loopModeClk' data-id="{{index}}" />
+        </block>
+      </view>
+    </view>
+    <view class='devicecontrolA2'>
+      <text class='devicecontrol_text'>时间 </text>
+      <view class='offtime' bindtap='offtomeViewClk'>
+        <picker mode="time" value="{{roomControlInfo.offtime_H}}:{{roomControlInfo.offtime_M}}" start="00:00" end="12:00" disabled='{{roomControlInfo.powerswitch==1?false:true}}' bindchange="offTimeChange">
+          <view class='offtimechange'>
+            {{roomControlInfo.offtime_H}}:{{roomControlInfo.offtime_M}}
+          </view>
+        </picker>
+      </view>
+
+    </view>
+  </view>
+
+  <view class='devicecontrolB'>
+    <view class='powerswitch' bindtap='powerClk'>
+      <image src="{{powerSwitchimages[roomControlInfo.powerswitch]}}" class="dcB_powerimage" mode='aspectFit' />
+    </view>
+    <view class="fanspeed" bindtap='fanspeedViewClk'>
+      <slider class='slider' bindchange="fanspeedClk" min="1" max="7" step='1' block-size="28" show-value value='{{roomControlInfo.fanspeed}}' disabled='{{roomControlInfo.powerswitch==1?false:true}}' />
+    </view>
+  </view>
+
+  <!-- 浮动屏蔽罩 -->
+  <view wx:if="{{deviceInfo.user=='2'}}" class="modal-mask" bindtap="controlViewMaskClk">
+  </view>
+</view>

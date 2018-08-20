@@ -1,0 +1,17 @@
+<view class='containerAll'> 
+  <view class='wxuserinfoView'>
+    <open-data type="userAvatarUrl" class ='wximage'></open-data>
+    <open-data type="userNickName"></open-data>
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfoClk">{{getuserinfoButtonText}}</button>
+  </view>
+
+  <block wx:for="{{systemItem}}" wx:key="navItems">
+    <view class='cell' bindtap='systemListClk' id="{{index+1}}">
+       <text class='title'>{{item}}</text> 
+       <text class='iconRight'>></text> 
+    </view>
+  </block>
+
+  <button class='quiteBtn' type='warn' bindtap='quiteClk'>退出登陆</button>
+
+</view>

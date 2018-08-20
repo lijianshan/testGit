@@ -1,0 +1,44 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.cellView {
+  width: 90%;
+  height: 100rpx;
+  background-color: white;
+  margin-top: 30rpx;
+}
+
+.CAPTCHAView {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CAPTCHAText {
+  width: 55%;
+  height: 100%;
+  border: 1rpx solid #d5d5d5;
+  border-radius: 5px;
+  color: #545454;
+  text-align: center;
+}
+
+.CAPTCHABtn {
+  width: 45%;
+  height: 100%;
+  color: white;
+  background-color: #068de7;
+}
+.nextBtn{
+  color: white;
+  background-color: #068de7;
+}
+.phoneText {
+  border: 1rpx solid #d5d5d5;
+  border-radius: 5px;
+  color: #545454;
+  text-align: center;
+}

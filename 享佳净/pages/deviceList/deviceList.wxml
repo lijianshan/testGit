@@ -1,0 +1,54 @@
+<view class='containerAll'>
+
+
+  <view class='cell' bindtap='deviceAddClk'>
+    <image class="icon" src="../../images/deviceAdd.png" mode='aspectFit'></image>
+    <text class='title'>添加设备</text>
+  </view>
+
+  <view class='line'></view>
+
+  <view class='cell'>
+    <image class="icon" src="../../images/deviceList.png" mode='aspectFit'></image>
+    <text class='title'>设备列表({{deviceStateList.length}}台)</text>
+    <image class="question" src="../../images/question.png" mode='aspectFit' bindtap='aboutClk'></image>
+  </view>
+
+  <scroll-view scroll-y="true" class="deviceView}">
+    <view wx:for="{{deviceStateList}}" wx:key="navItems" class="deviceCellView   {{slipEditing.items[index] ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove">
+      <view class='deviceCell' bindtap='deviceListClk' data-id="{{index}}">
+        <image src="{{deviceImages[item.modelId]}}" class='deviceImage' mode='aspectFit' />
+        <view class='deviceInfo'>
+          <view class='state'>
+            <image wx:if="{{item.line=='off'}}" class="stateImage" src="../../images/lineOff.png" mode='aspectFit'></image>
+            <image wx:else class="stateImage" src="../../images/lineOn.png" mode='aspectFit'></image>
+          </view>
+          <view class='user'>
+            <image class="userImage" src="{{userImages[item.user]}}" mode='aspectFit'></image>
+          </view>
+          <view class='name'>
+            <text class='nameTitle'>{{item.name}}</text>
+          </view>
+          <view class='other'>
+            <view class='othercell'>
+              <image class="otherImage" src="../../images/aqi.png" mode='aspectFit'></image>
+              <text>{{item.aqi}}</text>
+            </view>
+            <view class='othercell'>
+              <image class="otherImage" src="../../images/pm25.png" mode='aspectFit'></image>
+              <text wx:if="{{item.pm25>65533}}">—</text>
+              <text wx:else>{{item.pm25}}</text>
+            </view>
+            <view class='othercell'>
+              <image class="otherImage" src="../../images/fan.png" mode='aspectFit'></image>
+              <text>{{item.fan}}</text>
+            </view>
+          </view>
+
+        </view>
+      </view>
+      <view class="manage" catchtap="manageClk" data-id="{{index}}">设备管理</view>
+    </view>
+  </scroll-view>
+
+</view>

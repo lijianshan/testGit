@@ -1,0 +1,29 @@
+<view class='containerAll'>
+
+  <view class='iconView'>
+    <image class="iconimg" src="../../images/AppIcon.png" mode='aspectFit'></image>
+    <text class='versionnumber'>版本号：1.1.8</text>
+  </view>
+  <!-- 克服电话 -->
+  <view class='cell' bindtap='phoneClk'>
+    <image class="iconLeft" src="../../images/phone.png" mode='aspectFit'></image>
+    <text class='title'>客服电话:</text>
+    <text class='value'>{{companyInfo.phone}}</text>
+    <text class='iconRight'>></text>
+  </view>
+  <!-- 官网 -->
+  <view class='cell'>
+    <image class="iconLeft" src="../../images/officiaweb.png" mode='aspectFit'></image>
+    <text class='title'>官网:</text>
+    <text class='value' selectable='true'>{{companyInfo.oem_url}}</text>
+    <image class="iconRight" src="../../images/copy.png" mode='aspectFit' bindtap='copyurlClk'></image>
+  </view>
+  <!-- 联系地址 -->
+  <view class='cell'>
+    <image class="iconLeft" src="../../images/location.png" mode='aspectFit'></image>
+    <text class='title'>联系地址:</text>
+    <text class='value' selectable='true'>{{companyInfo.address}}</text>
+    <image class="iconRight" src="../../images/copy.png" mode='aspectFit' bindtap='copyaddressClk'></image>
+  </view>
+
+</view>

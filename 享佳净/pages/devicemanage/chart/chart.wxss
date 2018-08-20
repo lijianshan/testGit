@@ -1,0 +1,82 @@
+page {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+}
+
+.swiper-tab {
+  width: 100%;
+  height: 6%;
+  line-height: 50rpx;
+  background: #1b82d1;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.swiper-tab-list {
+  width: 30%;
+  text-align: center;
+}
+
+.on {
+  border-bottom: 10rpx solid #fff;
+}
+
+.title {
+  width: 100%;
+  height: 6%;
+  padding-left: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.title text {
+  border-left: 10rpx solid #1b82d1;
+}
+
+.statisticalchart {
+  width: 100%;
+  height: 41%;
+}
+
+.statisticalchart canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.co2MonthView{
+  width: 100%;
+  height: 100%;
+
+}
+.co2Cell {
+  width: 100%;
+  height: 100rpx;
+  font-size: 16px;
+  border-bottom: 2rpx solid #f5f5f5;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.co2title {
+  margin-left: 30rpx;
+  font-size: 12px;
+}
+.co2value {
+  margin-right: 30rpx;
+}
+
+.runchart {
+  width: 100%;
+  height: 41%;
+}
+
+.runchart canvas {
+  width: 100%;
+  height: 100%;
+}

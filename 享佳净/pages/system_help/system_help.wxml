@@ -1,0 +1,33 @@
+<scroll-view scroll-y="true" class='containerAll'>
+  <view class=' cell'>
+    <text class='titel'>设备用户类型及对应功能</text>
+    <text class='value' space="nbsp">设备的用户类型分为以下3种\n\n①管理员:\n通过直接添加设备的用户(第一次添加)\n拥有对设备的所有功能。\n\n②普通用户:\n通过‘标准模式二维码’扫码添加到的设备\n无法查看设备二维码、用户及SN码情况。\n\n③家长用户:\n通过‘家长模式二维码’扫码添加到的设备\n无法控制设备、设置设备；只可查看设备信息和历史记录</text>
+    <view class='line'></view>
+  </view>
+
+  <view class=' cell'>
+    <text class='titel'>添加设备</text>
+    <text class='value' space="nbsp">添加设备分为以下2种\n\n①直接添加设备(第一次使用设备)操作流程:\n通过应用商店下载‘享佳净’APP——>通过APP内的对码添加——>根据提示流程进行添加——>添加成功后返回小程序使用。\n注意：直接添加设备后会清空该设备的所有其他用户\n\n②扫码添加设备操作流程:\n设备列表界面——>添加设备——>扫码二维码自动添加设备</text>
+    <view class='line'></view>
+  </view>
+
+  <view class=' cell'>
+    <text class='titel'>设备离线时如何管理设备</text>
+    <text class='value' space="nbsp">设备列表界面——>对应设备左滑——>根据设备不同的用户类型具有不同的操作权限</text>
+    <view class='line'></view>
+  </view>
+
+  <view class=' cell'>
+    <text class='titel'>设备离线时如何修改WI-FI</text>
+    <text class='value' space="nbsp">重新直接添加设备</text>
+    <view class='line'></view>
+  </view>
+
+  <view class=' cell'>
+    <text class='titel'>设备状态同步</text>
+    <text class='value' space="nbsp">当设备端的状态变化时，大概30S左右会同步到小程序</text>
+    <view class='line'></view>
+  </view>
+
+
+</scroll-view>

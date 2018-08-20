@@ -1,0 +1,12 @@
+
+<view class="containerAll" catchtouchmove ='true'>
+  <image bindtap="previewImg" mode="aspectFit" src="{{qrcodeImagePath}}"></image>
+  <view class='tetxView'>
+  <text >1、点击二维码可以预览图片\n2、预览图片时长按图片有如下功能\n</text>
+  <text space='nbsp'>    * 发送给微信朋友\n    * 保存图片\n    * 收藏</text>
+  <text >\n\n注意：二维码有效期为30分钟</text>
+  </view>
+
+</view>
+
+<canvas canvas-id="mycanvas" style='width:{{qrcodeSize}}rpx;height:{{qrcodeSize}}rpx' />

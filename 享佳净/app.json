@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/loginAccount/loginAccount",
+    "pages/register/register",
+    "pages/forgetPsd1/forgetPsd1",
+    "pages/forgetPsd2/forgetPsd2",
+    "pages/deviceList/deviceList",
+    "pages/deviceListAdd/deviceListAdd",
+    "pages/deviceListAbout/deviceListAbout",
+    "pages/deviceMain/deviceMain",
+    "pages/deviceOutAir/deviceOutAir",
+    "pages/devicemanage/devicemanage",
+    "pages/devicemanage/QRCode/QRCode",
+    "pages/devicemanage/user/user",
+    "pages/devicemanage/chart/chart",
+    "pages/devicemanage/SNCode/SNCode",
+    "pages/devicemanage/Weeks/Weeks",
+    "pages/devicemanage/wifi/wifi",
+    "pages/devicemanage/info/info",
+    "pages/outdoor/outdoor",
+    "pages/system/system",
+    "pages/system_aboutMe/system_aboutMe", 
+    "pages/system_userInfo/system_userInfo",
+    "pages/system_help/system_help"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#33528f",
+    "navigationBarTitleText": "享佳净",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "backgroundColor": "#f0f0f0",
+    "color": "#707070",
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/deviceList/deviceList",
+        "iconPath": "images/homeDevice.png",
+        "selectedIconPath": "images/homeDevice_on.png",
+        "text": "设备"
+      },
+      {
+        "pagePath": "pages/outdoor/outdoor",
+        "iconPath": "images/outDoor.png",
+        "selectedIconPath": "images/outDoor_on.png",
+        "text": "室外"
+      },
+      {
+        "pagePath": "pages/system/system",
+        "iconPath": "images/homeSystem.png",
+        "selectedIconPath": "images/homeSystem_on.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

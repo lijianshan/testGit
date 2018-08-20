@@ -1,0 +1,49 @@
+<view class='containerAll'>
+
+  <view class='header'>
+    <text class='headertitle'>基本信息</text>
+  </view>
+
+  <!-- 当前账户 -->
+  <view class='cell'>
+    <text class='title'>当前账户:</text>
+    <text class='value'>{{userInfo.loginName}}</text>
+    <text class='iconRight'></text>
+  </view>
+
+  <!-- 用户名 -->
+  <view class='cell'>
+    <text class='title'>用户名:</text>
+    <input class="value" placeholder-style="color:#545454" placeholder="{{userInfo.name}}" bindinput="nameInput" />
+    <text class='iconRight'>></text>
+  </view>
+
+  <!-- 电话 -->
+  <view class='cell'>
+    <text class='title'>电话:</text>
+    <input class="value" type='number' placeholder-style="color:#545454" placeholder="{{userInfo.phone}}" bindinput="phoneInput" />
+    <text class='iconRight'>></text>
+  </view>
+
+  <view class='header'>
+    <text class='headertitle'>居住地址</text>
+  </view>
+
+  <!-- 省市 -->
+  <view class='cell'>
+    <text class='addresstitle'>省市:</text>
+    <picker bindchange="changeRegin" mode="region" value="{{region}}" class="addressvalue">
+      <view>{{region[0]}} {{region[1]}} </view>
+    </picker>
+    <text class='iconRight'>></text>
+  </view>
+
+  <!-- 详细地址 -->
+  <view class='cell'>
+    <text class='addresstitle'>详细:</text>
+    <input class="addressvalue" placeholder-style="color:#545454" placeholder="{{userInfo.userAddressDetails}}" bindinput="userAddressDetailsInput" />
+    <text class='iconRight'>></text>
+  </view>
+  <button class='saveBtn' bindtap='saveClk'>保存</button>
+
+</view>
